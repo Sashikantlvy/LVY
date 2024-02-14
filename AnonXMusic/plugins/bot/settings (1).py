@@ -94,7 +94,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
 @languageCB
 async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
-        InputMediaVideo("https://graph.org/file/69b3f128014d53bca943a.mp4"),
+        InputMediaVideo("https://graph.org/file/69b3f128014d53bca943a.mp4", has_spoiler=True),
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="✭ʙᴀᴄᴋ✭", callback_data=f"settingsback_helper")]]
         ),
