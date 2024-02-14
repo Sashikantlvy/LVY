@@ -29,18 +29,24 @@ from strings import get_string
 
 
 YUMI_PICS = [
-"https://telegra.ph/file/a5bab2979b394358a85fb.jpg",
-"https://telegra.ph/file/c4d55ee5bf4b897b7c889.jpg",
-"https://telegra.ph/file/5cbd0785e1ecc88e76b64.jpg",
-"https://telegra.ph/file/891742a91fc82e3e500d1.jpg",
-"https://telegra.ph/file/c5211b79c5227cde1dbea.jpg",
-"https://telegra.ph/file/ac288f21162efea13e359.jpg",
-"https://telegra.ph/file/716647c16254aa77fd189.jpg",
-"https://telegra.ph/file/b8c11b32abef6fce3081f.jpg",
-"https://telegra.ph/file/93fd70f204ed30e32f220.jpg",
-"https://telegra.ph/file/19fa60571da4e42361ce9.jpg",
-"https://telegra.ph/file/02dd4f129ba4d7a3f2813.jpg",
-"https://telegra.ph/file/57e109386e8a6075eff52.jpg"
+"https://telegra.ph/file/23f73435a6ecfd4672f7a.jpg",
+"https://telegra.ph/file/876d368cdbc7ff8ec9da1.jpg",
+"https://telegra.ph/file/e612d72e6c34169d25f0a.jpg",
+"https://telegra.ph/file/bcd8260e9a0b017c6093a.jpg",
+"https://telegra.ph/file/f34821eda0b7f6d6dd1e0.jpg",
+"https://telegra.ph/file/d2de9d8ae78ea6728a396.jpg",
+"https://telegra.ph/file/98f4a927d3ece2d533288.jpg",
+"https://telegra.ph/file/3a0193ab0784f4ea72e01.jpg",
+"https://telegra.ph/file/908acc43a5bc5efa3eb64.jpg",
+"https://telegra.ph/file/4da8c3c33986ddcf6b3bf.jpg",
+"https://telegra.ph/file/08d0607336afdd7cb657e.jpg",
+"https://telegra.ph/file/a3c08fe02de2e0a44cc38.jpg",
+"https://telegra.ph/file/faab37992164e1a4302d7.jpg",
+"https://telegra.ph/file/48311cb6c7f2c81044181.jpg",
+"https://telegra.ph/file/3f6feb47b97b7ae433e64.jpg",
+"https://telegra.ph/file/498319eff274c25b1ddbe.jpg",
+"https://telegra.ph/file/bf4bfec900f50613f3659.jpg",
+"https://telegra.ph/file/9f21e49f1f3c4e10f29d7.jpg"
   ]
 
 
@@ -81,7 +87,7 @@ async def start_pm(client, message: Message, _):
                 )
             return
         if name == "verify":
-            await message.reply_text(f"ʜᴇʏ {message.from_user.first_name},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ ɪɴ ˹𝐓𝐚𝐫𝐠𝐞𝐭 ✘ 𝐇𝐢𝐭˼, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.")
+            await message.reply_text(f"ʜᴇʏ {message.from_user.first_name},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ ɪɴ ˹ʟ ᴠ ʏ ☔ ᴍ ᴜ s ɪ ᴄ 🎶˼, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.")
             if await is_on_off(2):
                 sender_id = message.from_user.id
                 sender_name = message.from_user.first_name
