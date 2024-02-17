@@ -1,5 +1,4 @@
 from pyrogram import filters
-from pyrogram.types import InputMediaVideo
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import (
@@ -7,6 +6,8 @@ from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     Message,
+    InputMediaPhoto,
+    InputMediaVideo,
 )
 
 from AnonXMusic import app
@@ -35,7 +36,7 @@ from AnonXMusic.utils.inline.settings import (
     vote_mode_markup,
 )
 from AnonXMusic.utils.inline.start import private_panel
-from config import BANNED_USERS, OWNER_ID
+from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL
 
 
 @app.on_message(
@@ -49,8 +50,19 @@ async def settings_mar(client, message: Message, _):
         reply_markup=InlineKeyboardMarkup(buttons),
     )
 
+@app.on_callback_query(filters.regex("gib_source") & ~BANNED_USERS)
+@languageCB
+async def gib_repo(client, CallbackQuery, _):
+    await CallbackQuery.edit_message_media(
+        InputMediaVideo("https://te.legra.ph/file/ef47f077b671f69f8d8f0.mp4"),
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper")]]
+        ),
+    )
 
-@app.on_callback_query(filters.regex("settings_helper") & ~BANNED_USERS)
+@app.on_callback_query(
+    filters.regex("settings_helper") & ~BANNED_USERS
+)
 @languageCB
 async def settings_cb(client, CallbackQuery, _):
     try:
@@ -60,9 +72,8 @@ async def settings_cb(client, CallbackQuery, _):
     buttons = setting_markup(_)
     return await CallbackQuery.edit_message_text(
         _["setting_1"].format(
-            app.mention,
-            CallbackQuery.message.chat.id,
             CallbackQuery.message.chat.title,
+            CallbackQuery.message.chat.id,
         ),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
@@ -92,17 +103,6 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         return await CallbackQuery.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(buttons)
         )
-
-
-@app.on_callback_query(filters.regex("gib_source") & ~BANNED_USERS)
-@languageCB
-async def gib_repo(client, CallbackQuery, _):
-    await CallbackQuery.edit_message_media(
-        InputMediaVideo("https://graph.org/file/69b3f128014d53bca943a.mp4", has_spoiler=True),
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="✭ʙᴀᴄᴋ✭", callback_data=f"settingsback_helper")]]
-        ),
-    )
 
 
 @app.on_callback_query(
