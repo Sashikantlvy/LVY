@@ -92,7 +92,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         buttons = private_panel(_)
         return await CallbackQuery.edit_message_media(
             InputMediaPhoto(
-                media=random.choice(YUMI_PICS),
+                media=START_IMG_URL,
                 caption=_["start_2"].format(
                     CallbackQuery.from_user.first_name, app.mention),
             ),
